@@ -2,20 +2,20 @@ import React, { useState } from 'react';
 
 
 export const Release = () => {
-    const [username, setUsername] = useState('');
+    const [name, setname] = useState('');
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [sex, setsex] = useState('');
     const [phone, setPhone] = useState('');
     const [success, setSuccess] = useState(false); 
 
     const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form:', { username, email, password, phone });
+    console.log('Form:', { name, email, sex, phone });
     
     setSuccess(true);
-    setUsername('');
+    setname('');
     setEmail('');
-    setPassword('');
+    setsex('');
     setPhone('');
     };
 
@@ -24,15 +24,25 @@ export const Release = () => {
       <div id="release-form">
         <h1>Release</h1>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="name">Pet Name:</label>
             <input 
               type="text" 
-              id="username" 
-              name="username" 
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              id="name" 
+              name="name" 
+              value={name}
+              onChange={(e) => setname(e.target.value)}
               required
             />   
+
+            <label htmlFor="sex">sex:</label>
+              <input 
+                type="text" 
+                id="sex" 
+                name="sex" 
+                value={sex}
+                onChange={(e) => setsex(e.target.value)}
+                required
+            />
 
           <label htmlFor="email">Email:</label>
             <input 
@@ -44,15 +54,7 @@ export const Release = () => {
               required
             />
       
-          <label htmlFor="password">Password:</label>
-            <input 
-              type="text" 
-              id="password" 
-              name="password" 
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
+
 
             <label htmlFor="phone">Phone Number:</label>
             <input 
