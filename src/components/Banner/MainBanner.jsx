@@ -1,5 +1,5 @@
 import React from 'react';
-import DogImage from '../../../public/images/dog.png';
+import DogImage from '../../images/dog.png';
 import '../components.css';
 
 export const MainBanner = () => {
